@@ -2,13 +2,20 @@ import React from "react";
 import { FixedSizeList as List } from "react-window";
 
 import { useStyles } from "./styles";
-import { useDataset } from "../../hooks/useDataset";
-import { TABLE_WIDTH, TABLE_HEIGHT } from "../../constants/config";
-import { IRow } from "../../types";
+import {
+  TABLE_WIDTH,
+  TABLE_HEIGHT,
+  TABLE_ROW_HEIGHT,
+} from "../../constants/config";
+import { IRow, ICities } from "../../types";
 
-export const Table = () => {
+interface IProps {
+  cities: ICities;
+}
+
+export const Table = (props: IProps) => {
+  const { cities } = props;
   const classes = useStyles();
-  const { cities } = useDataset();
 
   const Row = ({ index, style }: IRow) => {
     const city = cities[index];
@@ -24,8 +31,8 @@ export const Table = () => {
     <List
       width={TABLE_WIDTH}
       height={TABLE_HEIGHT}
-      itemCount={1000}
-      itemSize={35}
+      itemCount={cities.length}
+      itemSize={TABLE_ROW_HEIGHT}
       className={classes.table}
     >
       {Row}
