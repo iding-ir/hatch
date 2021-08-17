@@ -9,14 +9,18 @@ import { Table } from "../Table";
 export const App = () => {
   const classes = useStyles();
   const { cities } = useDataset();
-  const [selectedCities, setSelectedCities] = useState();
+  const [selectedCities, setSelectedCities] = useState([]);
 
   return (
     <div className={classes.wrapper}>
       <Paper className={classes.container}>
         <Search cities={cities} onChange={setSelectedCities} />
 
-        <Table cities={selectedCities ? selectedCities! : cities} />
+        <Table
+          cities={
+            selectedCities && selectedCities.length ? selectedCities! : cities
+          }
+        />
       </Paper>
     </div>
   );
