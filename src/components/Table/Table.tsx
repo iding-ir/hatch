@@ -3,13 +3,13 @@ import { FixedSizeList as List } from "react-window";
 import { useTranslation } from "react-i18next";
 
 import { useStyles } from "./styles";
+import { TableRow } from "./TableRow";
 import {
   TABLE_WIDTH,
   TABLE_HEIGHT,
   TABLE_ROW_HEIGHT,
 } from "../../constants/config";
 import { IRow, ICities } from "../../types";
-import { TableRow } from "./TableRow";
 
 interface IProps {
   cities: ICities;

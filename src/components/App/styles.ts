@@ -1,5 +1,5 @@
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import { TABLE_PADDING, TABLE_WIDTH } from "../../constants/config";
+import { TABLE_WIDTH } from "../../constants/config";
 
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -11,8 +11,8 @@ export const useStyles = makeStyles((theme: Theme) =>
       height: "100%",
     },
     container: {
-      width: TABLE_WIDTH + 2 * TABLE_PADDING,
-      padding: TABLE_PADDING,
+      width: TABLE_WIDTH + 2 * theme.spacing(1),
+      padding: theme.spacing(1),
       paddingTop: 0,
     },
   })

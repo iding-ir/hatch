@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { Paper } from "@material-ui/core";
 
 import { useStyles } from "./styles";
-import { useDataset } from "../../hooks/useDataset";
 import { Search } from "../Search";
 import { Table } from "../Table";
+import { useDataset } from "../../hooks/useDataset";
+import { ICities } from "../../types";
 
 export const App = () => {
   const classes = useStyles();
   const { cities } = useDataset();
-  const [selectedCities, setSelectedCities] = useState([]);
+  const [selectedCities, setSelectedCities] = useState<ICities>([]);
 
   return (
     <div className={classes.wrapper}>

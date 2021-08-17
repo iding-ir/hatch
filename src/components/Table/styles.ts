@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(1),
 
       "& > div": {
-        width: "33.33%",
+        width: "calc(100% / 3)",
       },
     },
   })

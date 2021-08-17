@@ -1,6 +1,8 @@
 import React, { ChangeEvent } from "react";
 import TextField from "@material-ui/core/TextField";
-import Autocomplete from "@material-ui/lab/Autocomplete";
+import Autocomplete, {
+  AutocompleteRenderInputParams,
+} from "@material-ui/lab/Autocomplete";
 import { useTranslation } from "react-i18next";
 
 import { useStyles } from "./styles";
@@ -22,7 +24,7 @@ export const Search = (props: IProps) => {
         multiple
         options={cities}
         getOptionLabel={(option: ICity) => option.city}
-        renderInput={(params: any) => (
+        renderInput={(params: AutocompleteRenderInputParams) => (
           <TextField
             {...params}
             label={t("search.label")}
@@ -30,7 +32,7 @@ export const Search = (props: IProps) => {
             margin="normal"
           />
         )}
-        onChange={(event: ChangeEvent<{}>, value: ICities | null) => {
+        onChange={(event: ChangeEvent<{}>, value: ICities) => {
           onChange(value);
         }}
       />
