@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 import "./index.css";
+import "./localization";
 import { App } from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 

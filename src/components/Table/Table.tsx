@@ -1,5 +1,6 @@
 import React from "react";
 import { FixedSizeList as List } from "react-window";
+import { useTranslation } from "react-i18next";
 
 import { useStyles } from "./styles";
 import {
@@ -17,6 +18,7 @@ interface IProps {
 export const Table = (props: IProps) => {
   const { cities } = props;
   const classes = useStyles();
+  const { t } = useTranslation();
 
   const Row = ({ index, style }: IRow) => {
     const { city, admin_name, population } = cities[index];
@@ -32,7 +34,7 @@ export const Table = (props: IProps) => {
     );
   };
 
-  const fields = ["Name", "Admin", "Population"];
+  const fields = [t("table.name"), t("table.admin"), t("table.population")];
 
   return (
     <>

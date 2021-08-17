@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from "react";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import { useTranslation } from "react-i18next";
 
 import { useStyles } from "./styles";
 import { ICity, ICities } from "../../types";
@@ -13,6 +14,7 @@ interface IProps {
 export const Search = (props: IProps) => {
   const { cities, onChange } = props;
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
     <div className={classes.search}>
@@ -23,7 +25,7 @@ export const Search = (props: IProps) => {
         renderInput={(params: any) => (
           <TextField
             {...params}
-            label="Choose a City"
+            label={t("search.label")}
             variant="outlined"
             margin="normal"
           />
